@@ -1,0 +1,45 @@
+{% include 'menu.html.twig' %}
+<form method="post" action="/post/bestCookie">
+<table>
+    <tr>
+        <td colspan="2"><input type="text" value="{{ scoops }}" name="scoops" /></td>
+    </tr>
+
+    <tr>
+        <td colspan="2"><input type="submit" value="Calculate max score" /></td>
+    </tr>
+    {% if bestCookie != false %}
+    <tr>
+        <td>
+            The best cookie:
+            <table>
+                <tr>
+                    <th colspan="2">Cookie info</th>
+                </tr>
+                <tr>
+                    <td>Sprinkles</td><td>{{ bestCookie.sprinkles }}</td>
+                </tr>
+                <tr>
+                    <td>Butterscotch</td><td>{{ bestCookie.butterscotch }}</td>
+                </tr>
+                <tr>
+                    <td>Chocolate</td><td>{{ bestCookie.chocolate }}</td>
+                </tr>
+                <tr>
+                    <td>Candy</td><td>{{ bestCookie.candy }}</td>
+                </tr>
+                <tr>
+                    <th colspan="2">Other info:</th>
+                </tr>
+                <tr>
+                    <td>Score</td><td>{{ bestCookie.score }}</td>
+                </tr>
+                <tr>
+                    <td>Calories</td><td>{{ bestCookie.calories }}</td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    {% endif %}
+</table>
+</form>

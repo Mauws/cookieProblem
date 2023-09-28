@@ -1,0 +1,50 @@
+{% include 'menu.html.twig' %}
+<form method="post" action="/post/bestCookieByCalories">
+<table>
+    <tr>
+        <td>Calories</td>
+        <td><input type="text" value="{{ calories }}" name="calories" /></td>
+    </tr>
+    <tr>
+        <td>Scoops</td>
+        <td><input type="text" value="{{ scoops }}" name="scoops" /></td>
+    </tr>
+
+    <tr>
+        <td colspan="2"><input type="submit" value="Calculate max score with calory limit" /></td>
+    </tr>
+    {% if bestCookieWithCaloryLimit != false %}
+    <tr>
+        <td>
+            The best cookie:
+            <table>
+                <tr>
+                    <th colspan="2">Cookie info</th>
+                </tr>
+                <tr>
+                    <td>Sprinkles</td><td>{{ bestCookieWithCaloryLimit.sprinkles }}</td>
+                </tr>
+                <tr>
+                    <td>Butterscotch</td><td>{{ bestCookieWithCaloryLimit.butterscotch }}</td>
+                </tr>
+                <tr>
+                    <td>Chocolate</td><td>{{ bestCookieWithCaloryLimit.chocolate }}</td>
+                </tr>
+                <tr>
+                    <td>Candy</td><td>{{ bestCookieWithCaloryLimit.candy }}</td>
+                </tr>
+                <tr>
+                    <th colspan="2">Other info:</th>
+                </tr>
+                <tr>
+                    <td>Score</td><td>{{ bestCookieWithCaloryLimit.score }}</td>
+                </tr>
+                <tr>
+                    <td>Calories</td><td>{{ bestCookieWithCaloryLimit.calories }}</td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    {% endif %}
+</table>
+</form>
